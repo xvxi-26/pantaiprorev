@@ -1,0 +1,26 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Wisata extends Model
+{
+    protected $table = 'wisata';
+
+    protected $fillable = [
+        'nama',
+        'tarif',
+        'deskripsi',
+        'fasilitas',
+    ];
+
+    public function galeri()
+    {
+        return $this->hasMany(Galeri::class);
+    }
+    public function pengunjung()
+    {
+        return $this->hasMany(Pengunjung::class);
+    }
+}
