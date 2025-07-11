@@ -5,8 +5,21 @@ use App\Http\Controllers\WisataController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\PengunjungController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
+use App\Http\Middleware\AdminAuthenticate;
 
-Route::group(['prefix' => 'admin',], function () {
+// Admin login routes
+Route::get('/admin/login', [AuthController::class, 'index'])->name('admin.login');
+Route::post('/admin/login', [AuthController::class, 'login'])->name('admin.login.submit');
+Route::post('/admin/logout', [AuthController::class, 'logout'])->name('admin.logout');
+
+// Dashboard route (protected)
+
+Route::middleware([AdminAuthenticate::class])
+    ->prefix('admin')
+    ->group(function () {
+Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 Route::resource('pengunjung', PengunjungController::class);
 Route::resource('wisata', WisataController::Class);
 Route::get('/wisata/{wisata}/galeri/create', [GaleriController::class, 'create'])->name('wisata.galeri.create');

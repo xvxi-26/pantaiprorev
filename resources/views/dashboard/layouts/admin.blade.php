@@ -42,6 +42,11 @@
             <nav class="p-4">
                 <ul class="space-y-2">
                     <li>
+                        <a href="{{ route('admin.dashboard') }}" class="flex items-center gap-2 p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700">
+                            <i data-lucide="Home" class="w-5 h-5"></i> Dashboard
+                        </a>
+                    </li>
+                    <li>
                         <a href="{{ route('wisata.index') }}" class="flex items-center gap-2 p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700">
                             <i data-lucide="map" class="w-5 h-5"></i> Wisata
                         </a>
@@ -87,7 +92,7 @@
                             <i data-lucide="chevron-down" class="w-4 h-4"></i>
                         </button>
                         <div id="user-menu" class="absolute right-0 mt-2 bg-white dark:bg-gray-800 border dark:border-gray-700 rounded shadow-lg py-2 hidden z-10">
-                            <form method="POST" action="">
+                            <form method="POST" action="{{ route('admin.logout') }}">
                                 @csrf
                                 <button type="submit" class="flex items-center w-full px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">
                                     <i data-lucide="log-out" class="w-4 h-4 mr-2"></i> Logout
