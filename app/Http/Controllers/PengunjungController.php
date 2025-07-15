@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pengunjung;
 use App\Models\Wisata;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class PengunjungController extends Controller
 {
@@ -39,7 +40,13 @@ class PengunjungController extends Controller
             'waktu_kunjungan' => 'required|date',
         ]);
 
-        Pengunjung::create($request->all());
+        Pengunjung::create([
+            'wisata_id' => $request->wisata_id,
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
+            'notelp' => $request->notelp,
+            'waktu_kunjungan' => Carbon::parse($request->waktu_kunjungan),
+        ]);
 
         return redirect()->route('pengunjung.index')->with('success', 'Data pengunjung berhasil ditambahkan.');
     }
@@ -77,7 +84,13 @@ class PengunjungController extends Controller
         ]);
 
         $pengunjung = Pengunjung::findOrFail($id);
-        $pengunjung->update($request->all());
+        $pengunjung->update([
+            'wisata_id' => $request->wisata_id,
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
+            'notelp' => $request->notelp,
+            'waktu_kunjungan' => Carbon::parse($request->waktu_kunjungan),
+        ]);
 
         return redirect()->route('pengunjung.index')->with('success', 'Data pengunjung berhasil diperbarui.');
     }

@@ -56,6 +56,21 @@
                             <i data-lucide="user" class="w-5 h-5"></i> Pengunjung
                         </a>
                     </li>
+                    <li>
+                        <a href="{{ route('budaya.index') }}" class="flex items-center gap-2 p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700">
+                            <i data-lucide="shirt" class="w-5 h-5"></i> Budaya
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('profile.index') }}" class="flex items-center gap-2 p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700">
+                            <i data-lucide="map" class="w-5 h-5"></i> Manajemen Profile
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.laporan.form') }}" class="flex items-center gap-2 p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700">
+                            <i data-lucide="graph" class="w-5 h-5"></i> Laporan
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </aside>

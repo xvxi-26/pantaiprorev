@@ -8,6 +8,8 @@ use App\Http\Controllers\PengunjungController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Middleware\AdminAuthenticate;
+use App\Http\Controllers\BudayaController;
+use App\Http\Controllers\ProfileController;
 
 // Admin login routes
 Route::get('/admin/login', [AuthController::class, 'index'])->name('admin.login');
@@ -22,6 +24,10 @@ Route::middleware([AdminAuthenticate::class])
 Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 Route::resource('pengunjung', PengunjungController::class);
 Route::resource('wisata', WisataController::Class);
+Route::resource('budaya', BudayaController::class);
+Route::resource('profile', ProfileController::class);
+Route::get('laporan-pengunjung', [AdminController::class, 'laporanForm'])->name('admin.laporan.form');
+Route::get('laporan-pengunjung/download', [AdminController::class, 'cetakLaporan'])->name('admin.laporan.cetak');
 Route::get('/wisata/{wisata}/galeri/create', [GaleriController::class, 'create'])->name('wisata.galeri.create');
     Route::post('wisata/{wisata}/galeri/store', [GaleriController::class, 'store'])->name('wisata.galeri.store');
     Route::get('wisata/{wisata}/galeri/{galeri}/edit', [GaleriController::class, 'edit'])->name('wisata.galeri.edit');
@@ -30,3 +36,4 @@ Route::get('/wisata/{wisata}/galeri/create', [GaleriController::class, 'create']
 });
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('home/wisata/{id}', [HomeController::class, 'show'])->name('wisata.detail');
+Route::get('/budaya/{id}', [HomeController::class, 'showBudaya'])->name('budaya.show');

@@ -30,12 +30,14 @@
         </select>
     </div>
 
-    <div>
-        <label for="waktu_kunjungan" class="block font-semibold mb-1">Waktu Kunjungan</label>
-        <input type="datetime-local" name="waktu_kunjungan" id="waktu_kunjungan"
-               value="{{ old('waktu_kunjungan', isset($pengunjung) ? \Carbon\Carbon::parse($pengunjung->waktu_kunjungan)->format('Y-m-d\TH:i') : '') }}"
-               class="w-full px-4 py-2 border rounded dark:bg-gray-900 dark:border-gray-700" required>
+    <div class="mb-4">
+    <label for="waktu_kunjungan" class="block font-semibold mb-1">Waktu Kunjungan</label>
+    <input type="datetime-local" name="waktu_kunjungan" id="waktu_kunjungan"
+           class="w-full p-2 border rounded dark:bg-gray-700"
+           value="{{ old('waktu_kunjungan', isset($pengunjung) ? \Carbon\Carbon::parse($pengunjung->waktu_kunjungan)->format('Y-m-d\TH:i') : '') }}"
+           required>
     </div>
+
 
     <div>
         <button type="submit" class="px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700">
