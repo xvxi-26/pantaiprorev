@@ -88,7 +88,7 @@
                     {{ $item->nama }} <br><span class="font-semibold">Experience</span>
                 </h2>
                 <p class="text-base text-gray-700 mb-4 leading-relaxed">{{ $item->deskripsi }}</p>
-                <p class="text-base font-semibold text-gray-800 mb-6">Tarif: Rp {{ number_format($item->tarif, 0, ',', '.') }}</p>
+                <p class="text-base font-semibold text-gray-800 mb-6">Tarif: Rp {{ number_format($item->tarif, 0, ',', '.') }}/Orang</p>
                 <a href="{{ route('wisata.detail', $item->id) }}" class="uppercase underline tracking-wide text-gray-800 text-sm hover:text-black">
                     Check Now
                 </a>
