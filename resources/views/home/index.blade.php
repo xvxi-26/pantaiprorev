@@ -120,7 +120,7 @@
                         <p class="text-xs text-gray-600 leading-relaxed mb-3">
                             {{ \Illuminate\Support\Str::limit(strip_tags($item->deskripsi), 100) }}
                         </p>
-                        <a href="{{ route('budaya.show', $item->id) }}" class="text-[11px] uppercase tracking-widest text-gray-700 hover:underline">Learn More</a>
+                        <a href="{{ route('budayafront.show', $item->id) }}" class="text-[11px] uppercase tracking-widest text-gray-700 hover:underline">Learn More</a>
                     </div>
                 </div>
             </div>

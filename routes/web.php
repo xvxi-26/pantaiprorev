@@ -36,4 +36,4 @@ Route::get('/wisata/{wisata}/galeri/create', [GaleriController::class, 'create']
 });
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('home/wisata/{id}', [HomeController::class, 'show'])->name('wisata.detail');
-Route::get('/budaya/{id}', [HomeController::class, 'showBudaya'])->name('budaya.show');
+Route::get('/budaya/{id}', [HomeController::class, 'showBudaya'])->name('budayafront.show');
