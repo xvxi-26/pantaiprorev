@@ -69,7 +69,7 @@
                                 <a href="{{ route('pengunjung.kunjungan', $item->id) }}"
                                 title="Tambah data kunjungan"
                                 class="px-3 py-1 text-sm bg-blue-600 text-white rounded hover:bg-blue-700">
-                                    Tambah Kujungan
+                                    Tambah Kunjungan
                                 </a>
                                 <a href="{{ route('pengunjung.edit', $item->id) }}"
                                 title="Edit data pengunjung"
