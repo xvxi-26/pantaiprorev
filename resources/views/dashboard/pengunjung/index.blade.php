@@ -63,7 +63,7 @@
                             <div class="flex justify-center gap-2">
                                 <a href="{{ route('pengunjung.show', $item->id) }}"
                                 title="Lihat detail pengunjung"
-                                class="px-3 py-1 text-sm bg-blue-600 text-white rounded hover:bg-blue-700">
+                                class="px-3 py-1 text-sm bg-gray-600 text-white rounded hover:bg-blue-700">
                                     Detail
                                 </a>
                                 <a href="{{ route('pengunjung.kunjungan', $item->id) }}"
