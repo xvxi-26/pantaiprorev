@@ -54,14 +54,14 @@
                 <tr>
                     <td>{{ $i + 1 }}</td>
                     <td>{{ $p->wisata->nama ?? '-' }}</td>
-                    <td>{{ $p->nama }}</td>
-                    <td>{{ $p->alamat }}</td>
-                    <td>{{ $p->notelp }}</td>
-                    <td>{{ \Carbon\Carbon::parse($p->waktu_kunjungan)->format('d-m-Y H:i') }}</td>
+                    <td>{{ $p->pengunjung->nama ?? '-' }}</td>
+                    <td>{{ $p->pengunjung->alamat ?? '-' }}</td>
+                    <td>{{ $p->pengunjung->notelp ?? '-' }}</td>
+                    <td>{{ \Carbon\Carbon::parse($p->waktu)->format('d-m-Y H:i') }}</td>
                 </tr>
             @empty
                 <tr>
-                    <td colspan="6" style="text-align: center;">Tidak ada data pengunjung pada periode ini.</td>
+                    <td colspan="6" style="text-align: center;">Tidak ada data kunjungan pada periode ini.</td>
                 </tr>
             @endforelse
         </tbody>

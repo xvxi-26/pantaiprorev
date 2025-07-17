@@ -13,5 +13,6 @@ class Budaya extends Model
         'deskripsi',
         'url_gambar',
         'url_video',
+        'admin_id'
     ];
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Wisata;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth; // Tambahkan ini di atas jika belum
 
 class WisataController extends Controller
 {
@@ -27,6 +28,7 @@ class WisataController extends Controller
     /**
      * Menyimpan wisata baru ke database.
      */
+
     public function store(Request $request)
     {
         $request->validate([
@@ -36,7 +38,13 @@ class WisataController extends Controller
             'fasilitas' => 'nullable|string',
         ]);
 
-        Wisata::create($request->all());
+        Wisata::create([
+            'nama' => $request->nama,
+            'tarif' => $request->tarif,
+            'deskripsi' => $request->deskripsi,
+            'fasilitas' => $request->fasilitas,
+            'admin_id' => Auth::guard('admin')->id(), // ambil ID admin yang login
+        ]);
 
         return redirect()->route('wisata.index')->with('success', 'Data wisata berhasil ditambahkan.');
     }

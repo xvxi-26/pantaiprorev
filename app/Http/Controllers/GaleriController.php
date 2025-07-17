@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Galeri;
 use App\Models\Wisata;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class GaleriController extends Controller
 {
@@ -36,6 +37,7 @@ class GaleriController extends Controller
                     'wisata_id' => $wisataId,
                     'url_gambar' => Storage::url($path),
                     'url_video' => null,
+                    'admin_id' => Auth::guard('admin')->id(),
                 ]);
             }
         }

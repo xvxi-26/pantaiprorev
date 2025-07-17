@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -47,6 +48,7 @@ class ProfileController extends Controller
             'nama' => $validated['nama'],
             'deskripsi' => $validated['deskripsi'],
             'url_gambar' => $urlGambar,
+            'admin_id' => Auth::guard('admin')->id(), // ambil ID admin login
         ]);
 
         return redirect()->route('profile.index')->with('success', 'Profile berhasil ditambahkan');

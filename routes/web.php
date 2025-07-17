@@ -26,6 +26,8 @@ Route::resource('pengunjung', PengunjungController::class);
 Route::resource('wisata', WisataController::Class);
 Route::resource('budaya', BudayaController::class);
 Route::resource('profile', ProfileController::class);
+Route::get('pengunjung/{id}/kunjungan', [PengunjungController::class, 'tambahKunjunganForm'])->name('pengunjung.kunjungan');
+Route::post('pengunjung/{id}/kunjungan-store', [PengunjungController::class, 'simpanKunjungan'])->name('pengunjung.kunjungan.store');
 Route::get('laporan-pengunjung', [AdminController::class, 'laporanForm'])->name('admin.laporan.form');
 Route::get('laporan-pengunjung/download', [AdminController::class, 'cetakLaporan'])->name('admin.laporan.cetak');
 Route::get('/wisata/{wisata}/galeri/create', [GaleriController::class, 'create'])->name('wisata.galeri.create');

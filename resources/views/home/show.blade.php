@@ -41,7 +41,7 @@
             <div class="mt-6">
                 <h3 class="uppercase text-sm font-bold tracking-widest mb-2">Amenities</h3>
                 <ul class="text-sm space-y-2">
-                    @foreach(preg_split('/[\s,]+/', $wisata->fasilitas) as $item)
+                    @foreach(explode(',', $wisata->fasilitas) as $item)
                         <li class="flex items-center gap-2">
                             <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />

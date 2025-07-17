@@ -19,9 +19,9 @@ class PengunjungExport implements FromCollection, WithHeadings
         return $this->data->map(function ($item) {
             return [
                 'Nama Wisata' => $item->wisata->nama ?? '-',
-                'Nama Pengunjung' => $item->nama,
-                'Alamat' => $item->alamat,
-                'No. Telp' => $item->notelp,
+                'Nama Pengunjung' => $item->pengunjung->nama ?? '-',
+                'Alamat' => $item->pengunjung->alamat ?? '-',
+                'No. Telp' => $item->pengunjung->notelp ?? '-',
                 'Waktu Kunjungan' => $item->waktu_kunjungan,
             ];
         });

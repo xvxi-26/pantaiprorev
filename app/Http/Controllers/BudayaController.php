@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Budaya;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
+
 
 class BudayaController extends Controller
 {
@@ -55,6 +57,7 @@ class BudayaController extends Controller
             'deskripsi' => $validated['deskripsi'],
             'url_gambar' => $urlGambar,
             'url_video' => $urlVideo,
+            'admin_id' => Auth::guard('admin')->id(),
         ]);
 
         return redirect()->route('budaya.index')->with('success', 'Data budaya berhasil ditambahkan.');

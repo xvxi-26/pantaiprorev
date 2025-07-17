@@ -12,5 +12,6 @@ class Profile extends Model
         'nama',
         'deskripsi',
         'url_gambar',
+        'admin_id'
     ];
 }

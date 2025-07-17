@@ -13,6 +13,7 @@ class Galeri extends Model
         'nama',
         'url_gambar',
         'url_video',
+        'admin_id'
     ];
 
     public function wisata()

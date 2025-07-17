@@ -13,6 +13,7 @@ class Wisata extends Model
         'tarif',
         'deskripsi',
         'fasilitas',
+        'admin_id',
     ];
 
     public function galeri()
@@ -21,6 +22,6 @@ class Wisata extends Model
     }
     public function pengunjung()
     {
-        return $this->hasMany(Pengunjung::class);
+        return $this->belongsToMany(Pengunjung::class , 'kunjungan_wisata', 'wisata_id', 'pengunjung_id');
     }
 }
