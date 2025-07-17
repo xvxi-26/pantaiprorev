@@ -21,7 +21,7 @@
     <!-- Header -->
     <header class="bg-white shadow fixed top-0 left-0 w-full z-[1000]">
         <div class="container mx-auto flex justify-between items-center px-6 py-4">
-            <a href="{{ url('/') }}" class="text-2xl font-light text-blue-gray-900">PantaiPro</a>
+            <a href="{{ url('/') }}" class="text-2xl font-light text-blue-gray-900">Pantai Golo Mori</a>
             <nav class="space-x-4">
                 <a href="{{ url('/') }}" class="hover:text-blue-600">Beranda</a>
                 <a href="{{ url('/#wisata') }}" class="hover:text-blue-600">Wisata</a>

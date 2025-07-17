@@ -63,7 +63,7 @@
                     </li>
                     <li>
                         <a href="{{ route('profile.index') }}" class="flex items-center gap-2 p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700">
-                            <i data-lucide="map" class="w-5 h-5"></i> Manajemen Profile
+                            <i data-lucide="map" class="w-5 h-5"></i> Profile
                         </a>
                     </li>
                     <li>
