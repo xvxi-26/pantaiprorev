@@ -36,6 +36,8 @@ class WisataController extends Controller
             'tarif' => 'required|numeric|min:0',
             'deskripsi' => 'nullable|string',
             'fasilitas' => 'nullable|string',
+            'jam_buka' => 'required|date_format:H:i',
+            'jam_tutup' => 'required|date_format:H:i|after:jam_buka',
         ]);
 
         Wisata::create([
@@ -43,7 +45,9 @@ class WisataController extends Controller
             'tarif' => $request->tarif,
             'deskripsi' => $request->deskripsi,
             'fasilitas' => $request->fasilitas,
-            'admin_id' => Auth::guard('admin')->id(), // ambil ID admin yang login
+            'jam_buka' => $request->jam_buka,
+            'jam_tutup' => $request->jam_tutup,
+            'admin_id' => Auth::guard('admin')->id(),
         ]);
 
         return redirect()->route('wisata.index')->with('success', 'Data wisata berhasil ditambahkan.');
@@ -77,9 +81,18 @@ class WisataController extends Controller
             'tarif' => 'required|numeric|min:0',
             'deskripsi' => 'nullable|string',
             'fasilitas' => 'nullable|string',
+            'jam_buka' => 'required|date_format:H:i',
+            'jam_tutup' => 'required|date_format:H:i|after:jam_buka',
         ]);
 
-        $wisatum->update($request->all());
+        $wisatum->update([
+            'nama' => $request->nama,
+            'tarif' => $request->tarif,
+            'deskripsi' => $request->deskripsi,
+            'fasilitas' => $request->fasilitas,
+            'jam_buka' => $request->jam_buka,
+            'jam_tutup' => $request->jam_tutup,
+        ]);
 
         return redirect()->route('wisata.index')->with('success', 'Data wisata berhasil diperbarui.');
     }

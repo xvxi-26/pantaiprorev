@@ -17,6 +17,8 @@
                 <th class="px-6 py-3">Nama</th>
                 <th class="px-6 py-3">Tarif</th>
                 <th class="px-6 py-3">Fasilitas</th>
+                <th class="px-6 py-3">Jam Buka</th>
+                <th class="px-6 py-3">Jam Tutup</th>
                 <th class="px-6 py-3 text-center">Aksi</th>
             </tr>
         </thead>
@@ -26,6 +28,8 @@
                 <td class="px-6 py-4">{{ $item->nama }}</td>
                 <td class="px-6 py-4">Rp {{ number_format($item->tarif, 0, ',', '.') }}</td>
                 <td class="px-6 py-4">{{ $item->fasilitas }}</td>
+                <td class="px-6 py-4">{{ \Carbon\Carbon::parse($item->jam_buka)->format('H:i') }}</td>
+                <td class="px-6 py-4">{{ \Carbon\Carbon::parse($item->jam_tutup)->format('H:i') }}</td>
                 <td class="px-6 py-4 flex flex-wrap gap-2 justify-center">
                     <a href="{{ route('wisata.show', $item) }}" class="px-3 py-1 bg-gray-500 hover:bg-gray-600 text-white rounded text-xs">
                         Detail
@@ -44,7 +48,7 @@
             </tr>
             @empty
             <tr>
-                <td colspan="4" class="text-center px-6 py-4">Belum ada data wisata.</td>
+                <td colspan="6" class="text-center px-6 py-4">Belum ada data wisata.</td>
             </tr>
             @endforelse
         </tbody>

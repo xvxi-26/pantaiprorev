@@ -14,6 +14,8 @@ class Wisata extends Model
         'deskripsi',
         'fasilitas',
         'admin_id',
+        'jam_buka',
+        'jam_tutup',
     ];
 
     public function galeri()

@@ -55,6 +55,9 @@
             <p class="mt-6 font-medium text-gray-800">
                 Tarif: Rp {{ number_format($wisata->tarif, 0, ',', '.') }}/Orang
             </p>
+            <p class="text-sm text-gray-700 mt-1">
+                Jam Buka: {{ \Carbon\Carbon::parse($wisata->jam_buka)->format('H:i') }} - {{ \Carbon\Carbon::parse($wisata->jam_tutup)->format('H:i') }}
+            </p>
 
             <button class="inline-block mt-4 bg-gray-900 text-white px-6 py-2 uppercase text-sm tracking-wide hover:bg-black transition">
                 Book ON: 08123456789

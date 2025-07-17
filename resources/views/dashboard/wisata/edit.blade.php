@@ -28,6 +28,16 @@
         <textarea name="fasilitas" rows="2" class="w-full p-2 rounded border dark:bg-gray-900">{{ $wisatum->fasilitas }}</textarea>
     </div>
 
+    <div>
+        <label class="block mb-1">Jam Buka</label>
+        <input type="time" name="jam_buka" value="{{ $wisatum->jam_buka }}" class="w-full p-2 rounded border dark:bg-gray-900" required>
+    </div>
+
+    <div>
+        <label class="block mb-1">Jam Tutup</label>
+        <input type="time" name="jam_tutup" value="{{ $wisatum->jam_tutup }}" class="w-full p-2 rounded border dark:bg-gray-900" required>
+    </div>
+
     <div class="flex justify-end gap-2">
         <a href="{{ route('wisata.index') }}" class="px-4 py-2 border rounded">Batal</a>
         <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Update</button>
