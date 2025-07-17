@@ -41,7 +41,7 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <div>
                     <h3 class="text-xl font-semibold mb-4">Tentang Kami</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Eksplorasi keindahan Wisata Alam Dan Budaya Di Golo Mori</p>
                 </div>
                 <div>
                     <h3 class="text-xl font-semibold mb-4">Kontak</h3>
