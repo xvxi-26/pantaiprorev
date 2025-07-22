@@ -50,7 +50,7 @@
                 </div>
                 <div>
                     <h3 class="text-xl font-semibold mb-4">Sosial Media</h3>
-                    <p><a href="#" class="hover:underline">Instagram</a></p>
+                    <p><a href="https://www.instagram.com/wisatapantai9?igsh=NndqcHk4dHB4aGtj" target="_blank" class="hover:underline">Instagram</a></p>
                     <p><a href="#" class="hover:underline">Facebook</a></p>
                 </div>
             </div>
