@@ -24,6 +24,7 @@ Route::middleware([AdminAuthenticate::class])
 Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 Route::resource('pengunjung', PengunjungController::class);
 Route::resource('wisata', WisataController::Class);
+Route::put('wisata/{wisata}/edit-update', [WisataController::class, 'update'])->name('admin.wisata.update');
 Route::resource('budaya', BudayaController::class);
 Route::resource('profile', ProfileController::class);
 Route::get('pengunjung/{id}/kunjungan', [PengunjungController::class, 'tambahKunjunganForm'])->name('pengunjung.kunjungan');

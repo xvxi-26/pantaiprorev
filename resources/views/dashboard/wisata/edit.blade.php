@@ -5,7 +5,7 @@
 @section('content')
 <h2 class="text-xl font-semibold mb-4">Edit Wisata</h2>
 
-<form action="{{ route('wisata.update', $wisatum) }}" method="POST" class="bg-white dark:bg-gray-800 shadow rounded p-6 space-y-4">
+<form action="{{ route('admin.wisata.update', $wisatum) }}" method="POST" class="bg-white dark:bg-gray-800 shadow rounded p-6 space-y-4">
     @csrf @method('PUT')
 
     <div>

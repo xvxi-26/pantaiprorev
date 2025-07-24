@@ -74,24 +74,27 @@ class WisataController extends Controller
     /**
      * Memperbarui data wisata.
      */
-    public function update(Request $request, Wisata $wisatum)
+    public function update(Request $request, $id)
     {
+        $wisata = Wisata::findOrFail($id);
+
         $request->validate([
             'nama' => 'required|string|max:255',
             'tarif' => 'required|numeric|min:0',
-            'deskripsi' => 'nullable|string',
-            'fasilitas' => 'nullable|string',
-            'jam_buka' => 'required|date_format:H:i',
-            'jam_tutup' => 'required|date_format:H:i|after:jam_buka',
+            'deskripsi' => 'required|string',
+            'fasilitas' => 'required|string',
+            'jam_buka' => 'required|date_format:H:i:s',
+            'jam_tutup' => 'required|date_format:H:i:s|after:jam_buka',
         ]);
 
-        $wisatum->update([
+        $wisata->update([
             'nama' => $request->nama,
             'tarif' => $request->tarif,
             'deskripsi' => $request->deskripsi,
             'fasilitas' => $request->fasilitas,
             'jam_buka' => $request->jam_buka,
             'jam_tutup' => $request->jam_tutup,
+            'admin_id' => Auth::guard('admin')->id(), // Pastikan guard admin aktif
         ]);
 
         return redirect()->route('wisata.index')->with('success', 'Data wisata berhasil diperbarui.');
