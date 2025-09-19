@@ -18,6 +18,6 @@ class Pengunjung extends Model
 
     public function wisata()
     {
-        return $this->belongsToMany(Wisata::class , 'kunjungan_wisata', 'pengunjung_id', 'wisata_id');
+        return $this->belongsTo(Wisata::class);
     }
 }

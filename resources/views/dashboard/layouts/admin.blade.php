@@ -63,12 +63,12 @@
                     </li>
                     <li>
                         <a href="{{ route('profile.index') }}" class="flex items-center gap-2 p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700">
-                            <i data-lucide="map" class="w-5 h-5"></i> Profile
+                            <i data-lucide="book" class="w-5 h-5"></i> Profile
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('admin.laporan.form') }}" class="flex items-center gap-2 p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700">
-                            <i data-lucide="graph" class="w-5 h-5"></i> Laporan
+                            <i data-lucide="file" class="w-5 h-5"></i> Laporan
                         </a>
                     </li>
                 </ul>
